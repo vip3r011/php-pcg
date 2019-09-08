@@ -1,7 +1,0 @@
-ARG_ENABLE('pcg', 'pcg support', 'no');
-
-if (PHP_PCG != 'no') {
-	AC_DEFINE('HAVE_PCG', 1, 'pcg support enabled');
-
-	EXTENSION('pcg', 'pcg.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
-}
