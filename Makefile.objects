@@ -1,0 +1,8 @@
+pcg.lo: /home/dracovian/CLionProjects/php-src/ext/pcg/pcg.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/dracovian/CLionProjects/php-src/ext/pcg $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/dracovian/CLionProjects/php-src/ext/pcg/pcg.c -o pcg.lo 
+$(phplibdir)/pcg.la: ./pcg.la
+	$(LIBTOOL) --mode=install cp ./pcg.la $(phplibdir)
+
+./pcg.la: $(shared_objects_pcg) $(PCG_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS)  -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_pcg) $(PCG_SHARED_LIBADD)
+
