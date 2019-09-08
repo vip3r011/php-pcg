@@ -2,8 +2,8 @@
 PCG-64 PRNG support in PHP 7.3
 
 # requirements
-64-bit version of PHP 7.3
-64-bit operating system with a CPU that has access to the RDTSC opcode (x86_64 and AMD64 only)
+* 64-bit version of PHP 7.3
+* 64-bit operating system with a CPU that has access to the RDTSC opcode (x86_64 and AMD64 only)
 
 # functions
 ```php
