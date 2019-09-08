@@ -1,11 +1,11 @@
-# php-pcg
+# PCG Module
 PCG-64 PRNG support in PHP 7.3
 
-# requirements
+# Requirements
 * 64-bit version of PHP 7.3
 * 64-bit operating system with a CPU that has access to the RDTSC opcode (x86_64 and AMD64 only)
 
-# functions
+# Functions
 ```php
 // Return the module version which should match the PHP version it was written for (7.3.9 in this case).
 pcg_version() : string;
@@ -16,3 +16,11 @@ pcg_random(int $min, int $max) : int;
 // I can't guarantee the accuracy of the pcg_random function when it comes to negative values.
 // It's best not to generate negative values, just send it a positive value and subract that from whatever you desire.
 ```
+# Building
+```
+/path/to/phpize
+./configure --enable-pcg
+make && make install
+```
+
+**Don't forget to add the extension name to your php.ini file!**
